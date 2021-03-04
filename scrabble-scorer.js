@@ -120,7 +120,8 @@ function vowelBonusScore(word)
 
     for(let i = 0; i < newWord.length; i++)
       {
-        num2 = i + 1;
+        num2 = i;
+        num2 += 1;
       }
 
       //keeps track of how many characters are in the string

@@ -42,27 +42,27 @@ function initialPrompt() {
 
 function scrabbleScore(word)
 {
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   word = word.split('');
   let sPoints = 0;
 
   for(let i = 0; i < word.length; i++)
-  {
-    for(items in newPointStructure)
     {
-      if(items === word[i])
-        {
-          sPoints += newPointStructure[items];
-        }
+      for(items in newPointStructure)
+      {
+        if(items === word[i])
+          {
+            sPoints += newPointStructure[items];
+          }
+      }
     }
-  }
 
   return sPoints;
 }
 
 function transform(oldPointStructure) 
 {
-  let newObject = {};
+  let newObject = [];
 
   for(items in oldPointStructure)
     {
@@ -189,8 +189,6 @@ function runProgram()
   console.clear();
 
   initialPrompt();
-
-  console.log(newPointStructure.j);
 
   scorerPrompt(word);
 }

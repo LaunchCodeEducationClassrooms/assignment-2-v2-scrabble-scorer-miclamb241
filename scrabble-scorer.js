@@ -48,13 +48,13 @@ function scrabbleScore(word)
 
   for(let i = 0; i < word.length; i++)
   {
-    for(items in oldPointStructure)
-      {
-        if(items === word[i])
+    for(items in newPointStructure)
+    {
+      if(items === word[i])
         {
           sPoints += newPointStructure[items];
         }
-      }
+    }
   }
 
   return sPoints;
@@ -62,38 +62,18 @@ function scrabbleScore(word)
 
 function transform(oldPointStructure) 
 {
+  let newObject = {};
+
   for(items in oldPointStructure)
-  {
-    for(let i = 0; i < oldPointStructure['1'].length; i++)
+    {
+      for(i = 0; i < oldPointStructure[items].length; i++)
       {
-        oldPointStructure[oldPointStructure['1'][i]] = 1;
+        let letters = oldPointStructure[items][i];
+        letters = letters.toLowerCase();
+        newObject[letters] = Number(items);
       }
-    for(let i = 0; i < oldPointStructure['2'].length; i++)
-      {
-        oldPointStructure[oldPointStructure['2'][i]] = 2;
-      }
-    for(let i = 0; i < oldPointStructure['3'].length; i++)
-      {
-        oldPointStructure[oldPointStructure['3'][i]] = 3;
-      }
-    for(let i = 0; i < oldPointStructure['4'].length; i++)
-      {
-        oldPointStructure[oldPointStructure['4'][i]] = 4;
-      }
-    for(let i = 0; i < oldPointStructure['5'].length; i++)
-      {
-        oldPointStructure[oldPointStructure['5'][i]] = 5;
-      }
-    for(let i = 0; i < oldPointStructure['8'].length; i++)
-      {
-        oldPointStructure[oldPointStructure['8'][i]] = 8;
-      }
-    for(let i = 0; i < oldPointStructure['10'].length; i++)
-      {
-        oldPointStructure[oldPointStructure['10'][i]] = 10;
-      }
-  }
-  return oldPointStructure;
+    }
+  return newObject;
 };
 
 let newPointStructure = transform(oldPointStructure);
@@ -210,7 +190,7 @@ function runProgram()
 
   initialPrompt();
 
-  console.log(newPointStructure);
+  console.log(newPointStructure.j);
 
   scorerPrompt(word);
 }

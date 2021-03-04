@@ -11,7 +11,8 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
-function oldScrabbleScorer(word) {
+function oldScrabbleScorer(word) 
+{
   word = word.toUpperCase();
 	let letterPoints = "";
  
@@ -154,17 +155,17 @@ let scoringAlgorithms =
   {
     name: "Simple Score",
     description: "Each letter is worth 1 point.",
-    scorerFunction: simpleScore
+    scoringFunction: simpleScore
   },
   {
     name: "Vowel Bonus",
     description: "Vowels are 3 pts, consonants are 1 pt.",
-    scorerFunction: vowelBonusScore
+    scoringFunction: vowelBonusScore
   },
   {
     name: "Scrabble",
     description: "The traditional scoring algorithm",
-    scorerFunction: scrabbleScore
+    scoringFunction: scrabbleScore
   }
 ]
 
@@ -203,6 +204,8 @@ function runProgram()
   console.clear();
 
   initialPrompt();
+
+  console.log(newPointStructure);
 
   scorerPrompt(word);
 }

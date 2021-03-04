@@ -40,17 +40,22 @@ function initialPrompt() {
   return word;
 };
 
-let scrabbleScore = function(word)
+function scrabbleScore(word)
 {
   word = word.toUpperCase();
   word = word.split('');
   let sPoints = 0;
 
-  for(i = 0; i < word.length; i++)
-    {
-      letters = word[i];
-      sPoints += newPointStructure[letters];
-    }
+  for(let i = 0; i < word.length; i++)
+  {
+    for(items in oldPointStructure)
+      {
+        if(items === word[i])
+        {
+          sPoints += newPointStructure[items];
+        }
+      }
+  }
 
   return sPoints;
 }
@@ -183,19 +188,19 @@ function scorerPrompt()
     {
       console.log("\nAlgorithm name: " + scoringAlgorithms[0].name);
 
-      console.log("Score for '" + word + "': " + scoringAlgorithms[0].scorerFunction(word))
+      console.log("Score for '" + word + "': " + scoringAlgorithms[0].scoringFunction(word))
     }
     else if(userInput === "1")
       {
         console.log("\nAlgorithm name: " + scoringAlgorithms[1].name);
 
-        console.log("Score for '" + word + "': " + scoringAlgorithms[1].scorerFunction(word));
+        console.log("Score for '" + word + "': " + scoringAlgorithms[1].scoringFunction(word));
       }
       else if(userInput === "2")
         {
           console.log("\nAlgorithm name: " + scoringAlgorithms[2].name);
 
-          console.log("Score for '" + word + "': " + scoringAlgorithms[2].scorerFunction(word));
+          console.log("Score for '" + word + "': " + scoringAlgorithms[2].scoringFunction(word));
         }
 }
 

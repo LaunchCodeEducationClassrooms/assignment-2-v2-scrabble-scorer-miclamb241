@@ -91,10 +91,10 @@ function simpleScore(word)
   }
 
 function vowelBonusScore(word)
-  { 
-    let newWord = word.split(''); //split into array
+  {  
+    let newWord = word.split('');  //split into array
 
-    let arr = ['a', 'e', 'i', 'o', 'u']; // array to test newWord
+    let arr = ['a', 'a', 'a', 'e', 'e', 'e', 'i', 'i', 'i', 'o', 'o', 'o', 'u', 'u', 'u']; // array to test newWord
 
     for(let i = 0; i < arr.length; i++)
     {
@@ -102,20 +102,14 @@ function vowelBonusScore(word)
       {
         newWord.splice(newWord.indexOf(arr[i]), 1);
       }
-      else;
-
-      if(newWord.includes(arr[i]))
-      {
-        newWord.splice(newWord.indexOf(arr[i]), 1);
-      }
-      else;   
-      
-      //Could not figure out how to delete multiple characters so I used two of the same if statements to delete multiple vowels
     }
+
+    word = word.split('');
 
     for(let i = 0; i < word.length; i++)
       {
-        num = i + 1;
+        num = i;
+        num += 1;
       }
 
     for(let i = 0; i < newWord.length; i++)
@@ -124,16 +118,11 @@ function vowelBonusScore(word)
         num2 += 1;
       }
 
-      //keeps track of how many characters are in the string
-
     num3 = num - num2;
-    num4 = num - num3; //subtracts consonants from vowels
-
-    num5 = (num3 * 3) + num4;
-
-    //multiplies result by three for each vowel + the amount of consonants
-
-    return num5;
+    num3 *= 3;
+    num4 = num3 + num2;
+    
+    return num4;
   }
 
 let scoringAlgorithms =

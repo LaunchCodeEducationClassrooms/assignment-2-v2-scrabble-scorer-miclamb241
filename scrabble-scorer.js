@@ -80,12 +80,7 @@ let newPointStructure = transform(oldPointStructure);
 
 function simpleScore(word)
   {
-    for (let i = 1; i <= word.length; i++)
-    {
-      num = i; 
-    }
-
-    return num;
+    return word.length;
   }
 
 function vowelBonusScore(word)

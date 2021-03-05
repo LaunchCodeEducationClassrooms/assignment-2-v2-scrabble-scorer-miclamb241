@@ -79,6 +79,7 @@ describe("Scrabble Scorer solution", function() {
 	});
 
 	it("simpleScore returns a score equal to the length of its input", function() {
+    expect(solution.simpleScore('foo')).toBe(3);
 		expect(solution.simpleScore('')).toBe(0);
 	});
 

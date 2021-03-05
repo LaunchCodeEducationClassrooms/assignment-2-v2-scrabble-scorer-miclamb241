@@ -85,8 +85,6 @@ function simpleScore(word)
       num = i; 
     }
 
-    num = num.toString();
-
     return num;
   }
 

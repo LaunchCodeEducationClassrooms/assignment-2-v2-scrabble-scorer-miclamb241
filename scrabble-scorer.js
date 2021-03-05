@@ -84,21 +84,21 @@ function simpleScore(word)
   }
 
 function vowelBonusScore(word)
-  {   
-    let arr = ['a', 'e', 'i', 'o', 'u']; // array to test newWord
-
-    let vowel = 3;
+  {
+    let vowel = 0;
 
     for(let i = 0; i < word.length; i++)
-    {
-      num = i;
-
-      if(word.includes(arr[i]))
-        {
-           
-        }
-    }
-    return console.log(num);
+      {
+        if(word[i] === 'a' || word[i] === 'e' || word[i] === 'i' || word[i] === 'o' || word[i] === 'u')
+          {
+            vowel += 3;
+          }
+          else 
+            {
+              vowel += 1;
+            }
+      }
+    return vowel;
   }
 
 let scoringAlgorithms =

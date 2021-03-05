@@ -80,49 +80,30 @@ let newPointStructure = transform(oldPointStructure);
 
 function simpleScore(word)
   {
-    word = word.split('')
-
-    for (let i = 0; i < word.length; i++)
+    for (let i = 1; i <= word.length; i++)
     {
-      num = i;
-      num += 1;
+      num = i; 
     }
+
     return num;
   }
 
 function vowelBonusScore(word)
-  {  
-    let newWord = word.split('');  //split into array
+  {   
+    let arr = ['a', 'e', 'i', 'o', 'u']; // array to test newWord
 
-    let arr = ['a', 'a', 'a', 'e', 'e', 'e', 'i', 'i', 'i', 'o', 'o', 'o', 'u', 'u', 'u']; // array to test newWord
-
-    for(let i = 0; i < arr.length; i++)
-    {
-      if(newWord.includes(arr[i]))
-      {
-        newWord.splice(newWord.indexOf(arr[i]), 1);
-      }
-    }
-
-    word = word.split('');
+    let vowel = 3;
 
     for(let i = 0; i < word.length; i++)
-      {
-        num = i;
-        num += 1;
-      }
+    {
+      num = i;
 
-    for(let i = 0; i < newWord.length; i++)
-      {
-        num2 = i;
-        num2 += 1;
-      }
-
-    num3 = num - num2;
-    num3 *= 3;
-    num4 = num3 + num2;
-    
-    return num4;
+      if(word.includes(arr[i]))
+        {
+           
+        }
+    }
+    return console.log(num);
   }
 
 let scoringAlgorithms =
